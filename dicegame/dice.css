@@ -4,16 +4,16 @@ body{
 }
 .container{
     text-align: center;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     height:60vh;
     /* display: flex; */
     /* flex-direction: row; */
 }
 .dice{
-    border: 1px solid black;
+    /* border: 1px solid black; */
     display: inline-block;
     width: 40%;
-    height: 45%;
+    height: 60%;
 
 }
 .btn{
@@ -32,7 +32,8 @@ position: absolute;
 top: 1%;
 border: 1px solid black;
 left: 80%;
-}#player1Score{
+}
+#player1Score{
 display: inline-block;
 position: absolute;
 top: 1%;
