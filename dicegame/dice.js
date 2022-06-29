@@ -1,62 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
 
-let randomNunmber1, randomDiceImage1, randomImagePath1, image1, randomNunmber2, randomDiceImage2, randomImagePath2, image2, score1, score2;
-// document.getElementById('refresh').style.display = "none";
-// function start() {
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice Game</title>
+    <link rel="stylesheet" href="dice.css">
+    <script src="dice.js"></script>
+</head>
 
-// }
-// for (let i = 0; i < 6; i++) {
+<body>
+    <div>
+        <form onsubmit="PlayerName();return false " id="Name">
+            <label for="player1">Player1 Name :</label><br><br>
+            <input type="text" id="player1" placeholder="Enter Your Name"><br><br>
+            <label for="player2">Player2 Name :</label><br><br>
+            <input type="text" id="player2" placeholder="Enter Your Name"><br><br>
+            <button type="submit">OK</button>
+        </form>
+    </div>
+    <!-- <button onclick="start()">Start</button> -->
+    <div id="nameshow">
+        <div id="name1"></div>
+        <div id="name2"></div>
+        <div id="player1Score">Score</div>
+        <div id="player2Score">Score</div>
+    </div>
+    <div class="container" id="maindiv">
+        <h1>Dice Game</h1>
+        <p id="resultText">Well Come to Dice Game</p>
 
-function change() {
-    score1 = document.getElementById("player1Score");
-    score2 = document.getElementById("player2Score");
-    randomNunmber1 = Math.floor(Math.random() * 6) + 1;
-    randomDiceImage1 = "dice" + randomNunmber1 + ".png";
-    randomImagePath1 = "images/" + randomDiceImage1;
-    image1 = document.querySelectorAll("img")[0];
-    image1.setAttribute("src", randomImagePath1);
+        <div class="dice">
+            <p>Player 1</p>
+            <img id="image2" src="images/dice6.PNG" height="70%" width="50%">
+        </div>
 
-    randomNunmber2 = Math.floor(Math.random() * 6) + 1;
-    randomDiceImage2 = "dice" + randomNunmber2 + ".png";
-    randomImagePath2 = "images/" + randomDiceImage2;
-    image2 = document.querySelectorAll("img")[1];
-    image2.setAttribute("src", randomImagePath2);
-    console.log("randomNunmber1  ", randomNunmber1);
-    console.log("randomNunmber2  ", randomNunmber2);
+        <div class="dice">
+            <p>Player 2</p>
+            <img id="image1" src="images/dice6.PNG" height="70%" width="50%">
+        </div>
+    </div>
+    <button onclick="change()" class="btn" id="6times">Spin</button>
+    <button onclick="reset()" class="btn" id="refresh">Reset</button>
 
-    score1.innerHTML ="Player1 Score is " + " " + Number(randomNunmber1);
-    score2.innerHTML ="Player2 Score is " + " " + Number(randomNunmber2);
+</body>
 
-    if (randomNunmber1 > randomNunmber2) {
-        document.querySelector("#resultText").innerHTML = "Player 1 Wins!";
-    }
-    else if (randomNunmber1 < randomNunmber2) {
-        document.querySelector("#resultText").innerHTML = "Player 2 Wins!";
-    }
-    else if (randomNunmber1 == randomNunmber2) {
-        document.querySelector("#resultText").innerHTML = "Draw!";
-    }
-}
-// }
-// document.getElementById('6times').style.display = "none";
-// document.getElementById('refresh').style.display = "block";
-
-
-
-function reset() {
-    randomNunmber1 = "";
-    randomDiceImage1 = "";
-    randomImagePath1 = "";
-    image1 = "";
-    randomNunmber2 = "";
-    randomDiceImage2 = "";
-    randomImagePath2 = "";
-    image2 = "";
-    score1.innerHTML = "Player1 Score";
-    score2.innerHTML = "Player2 Score";
-    document.querySelector("#resultText").innerHTML = "Well Come to Dice Game";
-   
-}
-
-
-// document.querySelectorAll("button")[0].addEventListener("click", rollDice);
-// document.querySelectorAll("button")[1].addEventListener("click", reset);
+</html>
