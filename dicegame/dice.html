@@ -11,10 +11,23 @@
 </head>
 
 <body>
+    <div>
+        <form onsubmit="PlayerName();return false " id="Name">
+            <label for="player1">Player1 Name :</label><br><br>
+            <input type="text" id="player1" placeholder="Enter Your Name"><br><br>
+            <label for="player2">Player2 Name :</label><br><br>
+            <input type="text" id="player2" placeholder="Enter Your Name"><br><br>
+            <button type="submit">OK</button>
+        </form>
+    </div>
     <!-- <button onclick="start()">Start</button> -->
-    <div id="player1Score">Player1 Score</div>
-    <div id="player2Score">Player1 Score</div>
-    <div class="container">
+    <div id="nameshow">
+        <div id="name1"></div>
+        <div id="name2"></div>
+        <div id="player1Score">Score</div>
+        <div id="player2Score">Score</div>
+    </div>
+    <div class="container" id="maindiv">
         <h1>Dice Game</h1>
         <p id="resultText">Well Come to Dice Game</p>
 
@@ -30,7 +43,6 @@
     </div>
     <button onclick="change()" class="btn" id="6times">Spin</button>
     <button onclick="reset()" class="btn" id="refresh">Reset</button>
-
 
 </body>
 
