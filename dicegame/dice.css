@@ -1,0 +1,43 @@
+body{
+    margin: 0px;
+    text-align: center;
+}
+.container{
+    text-align: center;
+    border: 1px solid black;
+    height:60vh;
+    /* display: flex; */
+    /* flex-direction: row; */
+}
+.dice{
+    border: 1px solid black;
+    display: inline-block;
+    width: 40%;
+    height: 45%;
+
+}
+.btn{
+    margin: 2% 42%  ;
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 15%;
+    height: 5vh;
+    text-align: center;
+}
+#player2Score{
+
+display: inline-block;
+border-radius: 5px;
+position: absolute;
+top: 1%;
+border: 1px solid black;
+left: 80%;
+}#player1Score{
+display: inline-block;
+position: absolute;
+top: 1%;
+left: 10%;
+border-radius: 5px;
+border: 1px solid black;
+
+}
