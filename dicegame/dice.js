@@ -1,49 +1,88 @@
-<!DOCTYPE html>
-<html lang="en">
+let randomNunmber1, randomDiceImage1, randomImagePath1, image1, randomNunmber2, randomDiceImage2, randomImagePath2, image2, score2,score1;
+let getname1 = document.querySelector("#player1");
+let getname2 = document.querySelector("#player2");
+let name1 = document.querySelector("#name1");
+let name2 = document.querySelector("#name2");
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dice Game</title>
-    <link rel="stylesheet" href="dice.css">
-    <script src="dice.js"></script>
-</head>
+// document.getElementById('6times').style.display = "none";
+// document.getElementById('refresh').style.display = "none";
+// document.getElementById("nameshow").style.display = "none";
+// document.getElementsById('maindiv').style.display = "none";
 
-<body>
-    <div>
-        <form onsubmit="PlayerName();return false " id="Name">
-            <label for="player1">Player1 Name :</label><br><br>
-            <input type="text" id="player1" placeholder="Enter Your Name"><br><br>
-            <label for="player2">Player2 Name :</label><br><br>
-            <input type="text" id="player2" placeholder="Enter Your Name"><br><br>
-            <button type="submit">OK</button>
-        </form>
-    </div>
-    <!-- <button onclick="start()">Start</button> -->
-    <div id="nameshow">
-        <div id="name1"></div>
-        <div id="name2"></div>
-        <div id="player1Score">Score</div>
-        <div id="player2Score">Score</div>
-    </div>
-    <div class="container" id="maindiv">
-        <h1>Dice Game</h1>
-        <p id="resultText">Well Come to Dice Game</p>
 
-        <div class="dice">
-            <p>Player 1</p>
-            <img id="image2" src="images/dice6.PNG" height="70%" width="50%">
-        </div>
 
-        <div class="dice">
-            <p>Player 2</p>
-            <img id="image1" src="images/dice6.PNG" height="70%" width="50%">
-        </div>
-    </div>
-    <button onclick="change()" class="btn" id="6times">Spin</button>
-    <button onclick="reset()" class="btn" id="refresh">Reset</button>
+function PlayerName() {
 
-</body>
+    name1.innerHTML = getname1.value;
+    name2.innerHTML = getname2.value;
+    document.getElementById("nameshow").style.display = "block";
+    document.getElementById('6times').style.display = "block";
+    document.getElementById("Name").style.display = "none";
 
-</html>
+}
+// document.getElementsById("maindiv").style.display = "block";
+var dis = 0;
+let number1 = [];
+let number2 = [];
+function change() {
+    score1 = document.getElementById("player1Score");
+    score2 = document.getElementById("player2Score");
+    randomNunmber1 = Math.floor(Math.random() * 6) + 1;
+    randomDiceImage1 = "dice" + randomNunmber1 + ".png";
+    randomImagePath1 = "images/" + randomDiceImage1;
+    image1 = document.querySelectorAll("img")[0];
+    image1.setAttribute("src", randomImagePath1);
+
+    randomNunmber2 = Math.floor(Math.random() * 6) + 1;
+    randomDiceImage2 = "dice" + randomNunmber2 + ".png";
+    randomImagePath2 = "images/" + randomDiceImage2;
+    image2 = document.querySelectorAll("img")[1];
+    image2.setAttribute("src", randomImagePath2);
+    console.log("randomNunmber1  ", randomNunmber1);
+    console.log("randomNunmber2  ", randomNunmber2);
+    number1.push(randomNunmber1);
+    number2.push(randomNunmber2);
+    console.log("number1  ", number1);
+    console.log("number2  ", number2);
+
+
+    score1.innerHTML = "score is : " + Number(randomNunmber1);
+    score2.innerHTML = "score is : " + Number(randomNunmber2);
+
+    if (randomNunmber1 > randomNunmber2) {
+        document.querySelector("#resultText").innerHTML = "Player 1 Wins!";
+    }
+    else if (randomNunmber1 < randomNunmber2) {
+        document.querySelector("#resultText").innerHTML = "Player 2 Wins!";
+    }
+    else if (randomNunmber1 == randomNunmber2) {
+        document.querySelector("#resultText").innerHTML = "Draw!";
+    }
+    dis = dis + 1;
+    console.log("dis", dis);
+    if (dis == 6) {
+        document.getElementById('6times').style.display = "none";
+        // document.getElementById('refresh').style.display = "block";
+    }
+}
+let result;
+// }
+// document.getElementById('6times').style.display = "none";
+// document.getElementById('refresh').style.display = "block";
+
+
+
+function reset() {
+    randomNunmber1 = "";
+    randomDiceImage1 = "";
+    randomImagePath1 = "";
+    image1 = "";
+    randomNunmber2 = "";
+    randomDiceImage2 = "";
+    randomImagePath2 = "";
+    image2 = "";
+    score1.innerHTML = "Player1 Score";
+    score2.innerHTML = "Player2 Score";
+    document.querySelector("#resultText").innerHTML = "Well Come to Dice Game";
+
+}
