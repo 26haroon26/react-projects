@@ -45,27 +45,42 @@ function change() {
     console.log("number1  ", number1);
     console.log("number2  ", number2);
 
+    var totalnumber1 = 0;
+    for (var i=0; i<number1.length; i++){
+        totalnumber1 += +number1[i];
+    }
+    console.log(totalnumber1); 
+    
+    var totalnumber2 = 0;
+    for (var i=0; i<number2.length; i++){
+        totalnumber2 += +number2[i];
+    }
+    console.log(totalnumber2);
+    score1.innerHTML = "score is : " + Number(totalnumber1);
+    score2.innerHTML = "score is : " + Number(totalnumber2);
 
-    score1.innerHTML = "score is : " + Number(randomNunmber1);
-    score2.innerHTML = "score is : " + Number(randomNunmber2);
-
-    if (randomNunmber1 > randomNunmber2) {
-        document.querySelector("#resultText").innerHTML = "Player 1 Wins!";
-    }
-    else if (randomNunmber1 < randomNunmber2) {
-        document.querySelector("#resultText").innerHTML = "Player 2 Wins!";
-    }
-    else if (randomNunmber1 == randomNunmber2) {
-        document.querySelector("#resultText").innerHTML = "Draw!";
-    }
     dis = dis + 1;
     console.log("dis", dis);
     if (dis == 6) {
-        document.getElementById('6times').style.display = "none";
+
+
+document.getElementById('6times').style.display = "none";
         // document.getElementById('refresh').style.display = "block";
+    
+        if (totalnumber1 > totalnumber2) {
+            document.querySelector("#resultText").innerHTML = "Player 1 Wins!";
+        }
+        else if (totalnumber1 < totalnumber2) {
+            document.querySelector("#resultText").innerHTML = "Player 2 Wins!";
+        }
+        else if (totalnumber1 == totalnumber2) {
+            document.querySelector("#resultText").innerHTML = "Draw!";
+        }
+    
     }
+
+
 }
-let result;
 // }
 // document.getElementById('6times').style.display = "none";
 // document.getElementById('refresh').style.display = "block";
@@ -83,6 +98,12 @@ function reset() {
     image2 = "";
     score1.innerHTML = "Player1 Score";
     score2.innerHTML = "Player2 Score";
+    dis=0;
     document.querySelector("#resultText").innerHTML = "Well Come to Dice Game";
+number1=[];
+number2=[];
+totalnumber1=0;
+totalnumber2=0;
+document.getElementById('6times').style.display = "block";
 
 }
