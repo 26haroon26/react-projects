@@ -6,31 +6,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dice Game</title>
-    <link rel="stylesheet" href="dice.css">
-    <script src="dice.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js"></script>
 </head>
 
 <body>
     <div>
-        <form onsubmit="PlayerName();return false " id="Name">
+        <form onsubmit="PlayerName();return false" id="Name">
             <label for="player1">Player1 Name :</label><br><br>
-            <input type="text" id="player1" placeholder="Enter Your Name"><br><br>
+            <input type="text" id="player1" placeholder="Enter Your Name" value="Haroon"><br><br>
             <label for="player2">Player2 Name :</label><br><br>
-            <input type="text" id="player2" placeholder="Enter Your Name"><br><br>
+            <input type="text" id="player2" placeholder="Enter Your Name" value="Areeb"><br><br>
             <button type="submit">OK</button>
         </form>
     </div>
-    <!-- <button onclick="start()">Start</button> -->
     <div id="nameshow">
-        <div id="name1"></div>
-        <div id="name2"></div>
-        <div id="player1Score">Score</div>
-        <div id="player2Score">Score</div>
+        <aside id="first_name">
+            <p id="name1"></p>
+            <p id="player1Score">Score</p>
+        </aside>
+        <aside id="second_name">
+            <p id="name2"></p>
+            <p id="player2Score">Score</p>
+        </aside >
     </div>
     <div class="container" id="maindiv">
         <h1>Dice Game</h1>
         <p id="resultText">Well Come to Dice Game</p>
-
+        
         <div class="dice">
             <p>Player 1</p>
             <img id="image2" src="images/dice6.PNG" height="70%" width="50%">
@@ -40,9 +43,15 @@
             <p>Player 2</p>
             <img id="image1" src="images/dice6.PNG" height="70%" width="50%">
         </div>
+        <input onclick="change()" type="button" value="Roll (1) times" class="btn" id="6times">
+        <button onclick="reset()" class="btn" id="refresh">Reset</button>
     </div>
-    <button onclick="change()" class="btn" id="6times">Spin</button>
-    <button onclick="reset()" class="btn" id="refresh">Reset</button>
+    <script>
+        document.getElementById('nameshow').style.display = "none";
+        document.getElementById('maindiv').style.display = "none";
+        document.getElementById('6times').style.display = "none";
+        document.getElementById('refresh').style.display = "none";
+    </script>
 
 </body>
 
