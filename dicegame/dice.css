@@ -41,14 +41,14 @@ body {
     border-radius: 5px;
     border: 1px solid black;
 }
-#name1{
+#name2{
      display: inline-block;
     border-radius: 5px;
     position: absolute;
     top: 1%;
     border: 1px solid black;
     left: 80%;
-}#name2{
+}#name1{
     display: inline-block;
     position: absolute;
     top: 1%;
