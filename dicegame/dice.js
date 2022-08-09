@@ -32,13 +32,13 @@ function change() {
     score1 = document.getElementById("player1Score");
     score2 = document.getElementById("player2Score");
     randomNumber1 = Math.floor(Math.random() * 6) + 1;
-    randomDiceImage1 = "dice" + randomNumber1 + ".png";
+    randomDiceImage1 = `dice` + `${randomNumber1}` + `.png`;
     randomImagePath1 = "images/" + randomDiceImage1;
     image1 = document.querySelectorAll("img")[0];
     image1.setAttribute("src", randomImagePath1);
 
     randomNumber2 = Math.floor(Math.random() * 6) + 1;
-    randomDiceImage2 = "dice" + randomNumber2 + ".png";
+    randomDiceImage2 = `dice` + `${randomNumber2}` + `.png`;
     randomImagePath2 = "images/" + randomDiceImage2;
     image2 = document.querySelectorAll("img")[1];
     image2.setAttribute("src", randomImagePath2);
